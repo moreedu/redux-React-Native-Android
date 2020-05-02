@@ -3,6 +3,8 @@ import { darken } from 'polished';
 
 export const Container = styled.View`
   background: #000;
+  padding-top: 90px;
+  padding-bottom: 100px;
 `;
 
 export const Product = styled.View`
@@ -10,7 +12,7 @@ export const Product = styled.View`
   padding: 10px;
   margin: 15px;
   border-radius: 4px;
-  width: 220px;
+  width: 300px;
 `;
 
 export const ProductTitle = styled.Text`
@@ -30,7 +32,7 @@ export const ProductPrice = styled.Text`
 `;
 
 export const ProductAmount = styled.View`
-  padding: 12px;
+  padding: 10px;
   background: ${darken(0.03, '#7159c1')};
 `;
 
@@ -52,6 +54,7 @@ export const AddButtonText = styled.Text`
   text-align: center;
   font-weight: bold;
   background: #fff;
+  margin: 0px 4px;
 `;
 
 /*
