@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -18,6 +18,9 @@ import {
   ProductAmountText,
   AddButton,
   AddButtonText,
+  ViewCart,
+  CartButton,
+  TextCart,
 } from './styles';
 
 class Main extends React.Component {
@@ -39,6 +42,10 @@ class Main extends React.Component {
     }));
 
     this.setState({ products: data });
+  };
+
+  navigateToCarts = ({ navigation }) => {
+    navigation.navigate('Carrinho');
   };
 
   handleAddProduct = (id) => {
@@ -67,7 +74,6 @@ class Main extends React.Component {
 
   render() {
     const { products } = this.state;
-
     return (
       <Container>
         <FlatList
@@ -77,6 +83,11 @@ class Main extends React.Component {
           keyExtractor={(item) => String(item.id)}
           renderItem={this.renderProduct}
         />
+        <ViewCart>
+          <CartButton onPress={() => this.navigateToCarts()}>
+            <TextCart>CARRINHO - ITENS</TextCart>
+          </CartButton>
+        </ViewCart>
       </Container>
     );
   }

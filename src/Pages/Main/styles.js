@@ -57,6 +57,28 @@ export const AddButtonText = styled.Text`
   margin: 0px 4px;
 `;
 
+export const CartButton = styled.TouchableOpacity`
+  flex-direction: row;
+  align-items: center;
+  background: #fff;
+  border-radius: 5px;
+  margin: 20px;
+`;
+
+export const ViewCart = styled.View`
+  padding: 10px;
+  background: #7159c1;
+`;
+
+export const TextCart = styled.Text`
+  flex: 1;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin: 0px 4px;
+`;
+
 /*
 export const ProductList = styled.ul`
   display: grid;
