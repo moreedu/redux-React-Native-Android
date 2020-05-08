@@ -36,10 +36,10 @@ function Cart({ products, total, removeFromCart, updateAmountRequest }) {
   function decrement(product) {
     updateAmountRequest(product.id, product.amount - 1);
   }
-
+  // Tomar cuidado ao acrescentar o objeto products, com letra minúscula, porque a maiúscula P não corresponde ao objeto
   return (
     <Container>
-      {Products.length ? (
+      {products.length ? (
         <>
           <Products>
             {products.map((product) => (

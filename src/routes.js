@@ -28,7 +28,7 @@ export default function Routes() {
       <Stack.Screen
         name="Carrinho"
         component={Cart}
-        options={{ title: 'RocketShoes - Itens' }}
+        options={{ title: 'Carrinho - Itens' }}
       />
     </Stack.Navigator>
   );

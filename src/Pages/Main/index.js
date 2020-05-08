@@ -44,7 +44,8 @@ class Main extends React.Component {
     this.setState({ products: data });
   };
 
-  navigateToCarts = ({ navigation }) => {
+  navigateToCarts = () => {
+    const { navigation } = this.props;
     navigation.navigate('Carrinho');
   };
 
