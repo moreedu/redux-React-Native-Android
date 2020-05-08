@@ -3,13 +3,14 @@ import { darken } from 'polished';
 
 export const Container = styled.View`
   background: #000;
-  padding-top: 90px;
-  padding-bottom: 100px;
+  padding-top: 20px;
+  padding-bottom: 80px;
 `;
 
 export const Product = styled.View`
   background: #fff;
   padding: 10px;
+  padding-bottom: 5px;
   margin: 15px;
   border-radius: 4px;
   width: 300px;
@@ -33,11 +34,12 @@ export const ProductPrice = styled.Text`
 
 export const ProductAmount = styled.View`
   padding: 10px;
-  background: ${darken(0.03, '#7159c1')};
+  background: ${darken(0.03, '#7159c0')};
 `;
 
 export const ProductAmountText = styled.Text`
   color: #fff;
+  font-size: 15px;
   margin: 0px 4px 0px 10px;
 `;
 
@@ -51,10 +53,17 @@ export const AddButton = styled.TouchableOpacity`
 
 export const AddButtonText = styled.Text`
   flex: 1;
+  font-size: 15px;
   text-align: center;
   font-weight: bold;
   background: #fff;
   margin: 0px 4px;
+`;
+
+export const ViewSpace = styled.View`
+  padding-top: 5px;
+  padding-bottom: 40px;
+  background: #000;
 `;
 
 export const CartButton = styled.TouchableOpacity`
@@ -62,11 +71,13 @@ export const CartButton = styled.TouchableOpacity`
   align-items: center;
   background: #fff;
   border-radius: 5px;
-  margin: 20px;
+  margin: 10px;
+  padding: 10px;
+  max-width: 350px;
 `;
 
 export const ViewCart = styled.View`
-  padding: 10px;
+  padding: 20px;
   background: #7159c1;
 `;
 
@@ -76,10 +87,19 @@ export const TextCart = styled.Text`
   font-size: 20px;
   font-weight: bold;
   color: #000;
-  margin: 0px 4px;
+  margin: 0px 10px;
 `;
 
 /*
+
+ flex: 1;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin: 0px 4px;
+
+
 export const ProductList = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);

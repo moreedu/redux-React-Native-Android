@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/AntDesign';
 import { formatPrice } from '../../util/format';
 import api from '../../services/api';
 
@@ -18,6 +18,7 @@ import {
   ProductAmountText,
   AddButton,
   AddButtonText,
+  ViewSpace,
   ViewCart,
   CartButton,
   TextCart,
@@ -64,7 +65,7 @@ class Main extends React.Component {
         <ProductPrice>{formatPrice(item.price)}</ProductPrice>
         <AddButton onPress={() => this.handleAddProduct(item.id)}>
           <ProductAmount>
-            <Icon name="add-shopping-cart" color="#FFF" size={20} />
+            <Icon name="plus" color="#FFF" size={20} />
             <ProductAmountText>{amount[item.id] || 0}</ProductAmountText>
           </ProductAmount>
           <AddButtonText>ADICIONAR</AddButtonText>
@@ -75,6 +76,7 @@ class Main extends React.Component {
 
   render() {
     const { products } = this.state;
+    const amount = this.props;
     return (
       <Container>
         <FlatList
@@ -84,6 +86,10 @@ class Main extends React.Component {
           keyExtractor={(item) => String(item.id)}
           renderItem={this.renderProduct}
         />
+        <ViewSpace>
+          <Text> ....................... </Text>
+        </ViewSpace>
+
         <ViewCart>
           <CartButton onPress={() => this.navigateToCarts()}>
             <TextCart>CARRINHO - ITENS</TextCart>

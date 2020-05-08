@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/AntDesign';
 import * as CartActions from '../../store/modules/cart/actions';
 
 import { formatPrice } from '../../util/format';
@@ -51,20 +51,16 @@ function Cart({ products, total, removeFromCart, updateAmountRequest }) {
                     <ProductPrice>{product.priceFormatted}</ProductPrice>
                   </ProductDetails>
                   <ProductDelete onPress={() => removeFromCart(product.id)}>
-                    <Icon name="delete-forever" size={24} color="#7159c1" />
+                    <Icon name="delete" size={35} color="#7159c1" />
                   </ProductDelete>
                 </ProductInfo>
                 <ProductControls>
                   <ProductControlButton onPress={() => decrement(product)}>
-                    <Icon
-                      name="remove-circle-outline"
-                      size={20}
-                      color="#7159c1"
-                    />
+                    <Icon name="minuscircleo" size={30} color="#7159c1" />
                   </ProductControlButton>
                   <ProductAmount value={String(product.amount)} />
                   <ProductControlButton onPress={() => increment(product)}>
-                    <Icon name="add-circle-outline" size={20} color="#7159c1" />
+                    <Icon name="pluscircleo" size={30} color="#7159c1" />
                   </ProductControlButton>
                   <ProductSubtotal>{product.subtotal}</ProductSubtotal>
                 </ProductControls>
@@ -81,7 +77,7 @@ function Cart({ products, total, removeFromCart, updateAmountRequest }) {
         </>
       ) : (
         <EmptyContainer>
-          <Icon name="remove-shopping-cart" size={64} color="#eee" />
+          <Icon name="infocirlceo" size={64} color="#eee" />
           <EmptyText>Seu carrinho está vazio.</EmptyText>
         </EmptyContainer>
       )}
