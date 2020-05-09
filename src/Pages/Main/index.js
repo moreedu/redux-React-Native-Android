@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FlatList, Text, View } from 'react-native';
+import { FlatList, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -76,7 +76,7 @@ class Main extends React.Component {
 
   render() {
     const { products } = this.state;
-    const amount = this.props;
+    const { cartSize } = this.props;
     return (
       <Container>
         <FlatList
@@ -92,6 +92,10 @@ class Main extends React.Component {
 
         <ViewCart>
           <CartButton onPress={() => this.navigateToCarts()}>
+            <ProductAmount>
+              <Icon name="plus" color="#FFF" size={20} />
+              <ProductAmountText>{cartSize || 0}</ProductAmountText>
+            </ProductAmount>
             <TextCart>CARRINHO - ITENS</TextCart>
           </CartButton>
         </ViewCart>
@@ -100,6 +104,7 @@ class Main extends React.Component {
   }
 }
 const mapStateToProps = (state) => ({
+  cartSize: state.cart.lenght,
   amount: state.cart.reduce((amount, product) => {
     amount[product.id] = product.amount;
     return amount;

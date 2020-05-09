@@ -33,7 +33,7 @@ export const ProductPrice = styled.Text`
 `;
 
 export const ProductAmount = styled.View`
-  padding: 10px;
+  padding: 5px;
   background: ${darken(0.03, '#7159c0')};
 `;
 
@@ -61,7 +61,7 @@ export const AddButtonText = styled.Text`
 `;
 
 export const ViewSpace = styled.View`
-  padding-top: 5px;
+  padding-top: 30px;
   padding-bottom: 40px;
   background: #000;
 `;
@@ -70,10 +70,9 @@ export const CartButton = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   background: #fff;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
-  max-width: 350px;
+  border-radius: 20px;
+  margin-right: 0px;
+  max-width: 360px;
 `;
 
 export const ViewCart = styled.View`
@@ -87,7 +86,7 @@ export const TextCart = styled.Text`
   font-size: 20px;
   font-weight: bold;
   color: #000;
-  margin: 0px 10px;
+  margin: 0px 5px;
 `;
 
 /*
