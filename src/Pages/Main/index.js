@@ -104,7 +104,7 @@ class Main extends React.Component {
   }
 }
 const mapStateToProps = (state) => ({
-  cartSize: state.cart.lenght,
+  cartSize: state.cart.length,
   amount: state.cart.reduce((amount, product) => {
     amount[product.id] = product.amount;
     return amount;
